@@ -1,0 +1,81 @@
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>fileCollection test app</title>
+  <meta name="description" content=""/>
+  <meta name="viewport" content="width=device-width"/>
+</head>
+<body>
+  <div id="fileDropID" class="container">
+    {{> collTest}}
+  </div>
+</body>
+
+<template name="collTest">
+  <div class="">
+    <h3>file-collection Test App</h3>
+  </div>
+  <div class="fileDrop">
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>ID</th>
+          <th>Owner</th>
+          <th>Size</th>
+          <th>MIME Type</th>
+          <th>MD5</th>
+          <th>Preview</th>
+        </tr>
+      </thead>
+      <tbody>
+      {{#each dataEntries}}
+        <tr>
+          <td>
+          <button type="button" aria-hidden="true" class="btn btn-danger btn-itsy del-file"><span class="glyphicon glyphicon-remove"></span></button>
+          {{#if length}}
+            <a href="{{link}}?download=true">{{shortFilename 56}}</a>
+          {{else}}
+            {{shortFilename 56}}
+          {{/if}}
+          </td>
+          <td>
+          {{truncateId id}}</td>
+          <td>
+          {{#if owner}}
+            {{owner}}
+          {{else}}
+            <span class="text-muted">No owner</span>
+          {{/if}}
+          </td>
+          <td>
+          {{#if length}}
+            {{formattedLength}}
+          {{else}}
+            {{uploadStatus}}
+            <br/>{{uploadProgress}}% complete<br/>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar"
+              aria-valuenow="{{uploadProgress}}" aria-valuemin="0" aria-valuemax="100" style="width: {{uploadProgress}}%">
+              </div>
+            </div>
+          {{/if}}
+          </td>
+          <td>{{contentType}}</td>
+          <td>{{truncateId md5}}</td>
+          <td>
+          {{#if isImage}}
+            <a href="{{link}}"><img class="img-thumbnail" src="{{link}}" width="150"></a>
+          {{else}}
+            <span class="text-muted">No preview</span>
+          {{/if}}
+          </td>
+        </tr>
+        {{/each}}
+        <tr>
+          <td colspan="20" class="text-center"><span class="text-info">Drag files here to upload</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</template>

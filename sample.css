@@ -1,0 +1,24 @@
+/* CSS declarations go here */
+.container {
+  margin-top: 10px;
+}
+.loginTemp {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.text-danger {
+  color: #f00;
+}
+.text-success {
+  color: #008000;
+}
+.text-info {
+  color: #808080;
+}
+
+.btn-itsy {
+    padding: 1px 2px;
+    font-size: 6px;
+    line-height: 7px;
+}
