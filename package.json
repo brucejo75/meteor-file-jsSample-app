@@ -1,5 +1,5 @@
 {
-  "name": "fcExample",
+  "name": "meteor-file-jsSample-app",
   "private": true,
   "scripts": {
     "start": "meteor run"
