@@ -10,9 +10,12 @@ I decided to port the sample app over to JS, HTML and Bootstrap.  In the process
 
 I also figured that I would share the code so others in my predicament could take advantage of it.
 
+Many thanks to [vsivsi](https://github.com/vsivsi)!
+
 Enjoy!
 
 ### 5-16-2016 Update
 * Initial commit
 * Added "Upload" button
 * Added some sparse instructions
+
