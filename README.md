@@ -1,0 +1,18 @@
+# meteor-file-jsSample-app
+Port of [meteor-file-sample-app](https://github.com/vsivsi/meteor-file-sample-app) from COFFEE / JADE / SEMANTIC UI to JS / HTML / BOOTSTRAP
+
+The [meteor-file-collection](https://github.com/vsivsi/meteor-file-collection) looks like a nice tidy package for doing simple
+file uploads.  I am completely ignorant of Coffee Script, Jade and Semantic UI and unfortunately for me meteor-file-collection is
+implemented with those technologies
+
+As part of learning how to use meteor-file-collection
+I decided to port the sample app over to JS, HTML and Bootstrap.  In the process I figured out how to use it.
+
+I also figured that I would share the code so others in my predicament could take advantage of it.
+
+Enjoy!
+
+### 5-16-2016 Update
+* Initial commit
+* Added "Upload" button
+* Added some sparse instructions
