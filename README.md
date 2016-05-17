@@ -14,7 +14,7 @@ Many thanks to [vsivsi](https://github.com/vsivsi)!
 
 Enjoy!
 
-### 5-16-2016 Update
+### <a name="update-5-16-16"><a>5-16-2016 Update
 * Initial commit
 * Added "Upload" button
 * Added some sparse instructions
