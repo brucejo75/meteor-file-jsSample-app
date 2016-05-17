@@ -1,7 +1,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <title>fileCollection test app</title>
+  <title>file-collection JS Test App</title>
   <meta name="description" content=""/>
   <meta name="viewport" content="width=device-width"/>
 </head>
@@ -13,8 +13,18 @@
 
 <template name="collTest">
   <div class="">
-    <h3>file-collection Test App</h3>
+    <h3>file-collection JS Test App</h3>
+    <ul>
+      <li>Upload files by clicking 'Upload' or drag your files onto the grid.</li>
+      <li>Once uploaded you can download the files from the collection by clicking the link.</li>
+      <li>Delete the files from the collection by clicking the delete button in the name column.</li>
+    </ul>
+    <br><br>
   </div>
+  <div>
+    <button type="button" class="btn btn-success fileBrowse">Upload</button>
+  </div>
+  <br>
   <div class="fileDrop">
     <table class="table table-striped table-bordered">
       <thead>

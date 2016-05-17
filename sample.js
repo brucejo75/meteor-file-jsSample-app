@@ -46,8 +46,9 @@ if(Meteor.isClient) {
     });
   });
 
-  Template.collTest.onRendered(function assignDrop() {
+  Template.collTest.onRendered(function onRendered() {
     myData.resumable.assignDrop($('.fileDrop'));
+    myData.resumable.assignBrowse($('.fileBrowse'));
   });
 
   Tracker.autorun(function consistentCookie() {
