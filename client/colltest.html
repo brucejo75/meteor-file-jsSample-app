@@ -1,28 +1,22 @@
-<head>
-  <meta charset="utf-8"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <title>file-collection JS Test App</title>
-  <meta name="description" content=""/>
-  <meta name="viewport" content="width=device-width"/>
-</head>
-<body>
-  <div id="fileDropID" class="container">
-    {{> collTest}}
-  </div>
-</body>
-
 <template name="collTest">
   <div class="">
     <h3>file-collection JS Test App</h3>
     <ul>
-      <li>Upload files by clicking 'Upload' or drag your files onto the grid.</li>
-      <li>Once uploaded you can download the files from the collection by clicking the link.</li>
-      <li>Delete the files from the collection by clicking the delete button in the name column.</li>
+      <li>Upload files by clicking <button type="button" class="btn btn-primary">Upload</button> or drag your files onto the grid.</li>
+      <li>Once uploaded you can download the files from the collection by clicking the link in the name column.</li>
+      <li>Delete files from the collection by clicking the <button type="button" aria-hidden="true" class="btn btn-danger btn-itsy"><span class="glyphicon glyphicon-remove"></span></button> button in the name column.<br>
+      Note: this deletion will remove all data of any aborted upload and cannot be restarted after deleting.</li>
     </ul>
     <br><br>
   </div>
   <div>
-    <button type="button" class="btn btn-success fileBrowse">Upload</button>
+    <button type="button" class="btn btn-primary fileBrowse">Upload</button>
+    {{#if paused}}
+      <button type="button" class="btn btn-success fileResume">Resume All</button>
+    {{/if}}
+    {{#if isUploading}}
+      <button type="button" class="btn btn-warning filePause">Pause All</button>
+    {{/if}}
   </div>
   <br>
   <div class="fileDrop">
@@ -39,7 +33,7 @@
         </tr>
       </thead>
       <tbody>
-      {{#each dataEntries}}
+      {{#each files}}
         <tr>
           <td>
           <button type="button" aria-hidden="true" class="btn btn-danger btn-itsy del-file"><span class="glyphicon glyphicon-remove"></span></button>
@@ -50,7 +44,7 @@
           {{/if}}
           </td>
           <td>
-          {{truncateId id}}</td>
+          {{truncateId _id}}</td>
           <td>
           {{#if owner}}
             {{owner}}
