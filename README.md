@@ -14,6 +14,10 @@ Many thanks to [vsivsi](https://github.com/vsivsi)!
 
 Enjoy!
 
+### <a name="update-5-18-16"><a>5-18-2016 Update
+* Added support for `Pause All` and `Resume All`
+* Refactored to meteor client/server/lib directories, broke out template code
+
 ### <a name="update-5-16-16"><a>5-16-2016 Update
 * Initial commit
 * Added "Upload" button
