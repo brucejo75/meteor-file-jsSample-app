@@ -2,7 +2,9 @@ accounts-base@1.2.7
 accounts-password@1.1.8
 accounts-ui@1.1.9
 accounts-ui-unstyled@1.1.12
+aldeed:simple-schema@1.5.3
 allow-deny@1.0.4
+audit-argument-checks@1.0.7
 autoupdate@1.2.9
 babel-compiler@6.6.4
 babel-runtime@0.1.8
@@ -43,6 +45,8 @@ less@2.6.0
 livedata@1.0.18
 localstorage@1.0.9
 logging@1.0.12
+mdg:validated-method@1.1.0
+mdg:validation-error@0.2.0
 meteor@1.1.14
 meteor-base@1.0.4
 minifier-css@1.1.11

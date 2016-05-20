@@ -9,6 +9,9 @@ Template.collTest.onCreated(function onCreated() {
       'path': '/'
     });
   });
+  template.autorun(function subFileData() {
+    Meteor.subscribe('fileData');
+  });
 });
 
 Template.collTest.onRendered(function onRendered() {
@@ -30,7 +33,7 @@ function shorten(name, width) {
     retVal = name;
   }
   return retVal;
-};
+}
 
 Template.collTest.events({
   'click .del-file': function cancelFile() {
@@ -47,9 +50,12 @@ Template.collTest.events({
     Uploads.resumable.pause();
     t.pause.set(true);
   },
-  'click .fileResume': function pauseFiles(e, t) {
+  'click .fileResume': function resumeFiles(e, t) {
     Uploads.resumable.upload();
     t.pause.set(false);
+  },
+  'click .dump-file': function dumpFile() {
+    dumpData.call({'filename': this.filename});
   }
 });
 
@@ -75,14 +81,16 @@ Template.collTest.helpers({
     }
     return cursor;
   },
+  'fileData': function dataEntries() {
+    let doc = fileData.findOne({});
+    let data = doc && doc.data;
+    return data;
+  },
   'owner': function owner() {
     let ref = this.metadata;
     let FOwner = ref && ref._auth && ref._auth.owner;
     return FOwner;
   },
-  // 'id': function id() {
-  //   return '' + this._id;
-  // },
   'link': function getLink() {
     return Uploads.baseURL + '/md5/' + this.md5;
   },

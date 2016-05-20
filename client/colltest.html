@@ -4,6 +4,7 @@
     <ul>
       <li>Upload files by clicking <button type="button" class="btn btn-primary">Upload</button> or drag your files onto the grid.</li>
       <li>Once uploaded you can download the files from the collection by clicking the link in the name column.</li>
+      <li>Output the first 10K of data to the <b>File Data</b> panel below by pressing <button type="button" aria-hidden="true" class="btn btn-success btn-itsy">D</button>.</li>
       <li>Delete files from the collection by clicking the <button type="button" aria-hidden="true" class="btn btn-danger btn-itsy"><span class="glyphicon glyphicon-remove"></span></button> button in the name column.<br>
       Note: this deletion will remove all data of any aborted upload and cannot be restarted after deleting.</li>
     </ul>
@@ -38,6 +39,7 @@
           <td>
           <button type="button" aria-hidden="true" class="btn btn-danger btn-itsy del-file"><span class="glyphicon glyphicon-remove"></span></button>
           {{#if length}}
+            <button type="button" aria-hidden="true" class="btn btn-success btn-itsy dump-file">D</button>
             <a href="{{link}}?download=true">{{shortFilename 56}}</a>
           {{else}}
             {{shortFilename 56}}
@@ -81,5 +83,10 @@
         </tr>
       </tbody>
     </table>
+    <br><br>
+    <h4>File Data:</h4>
+    <div class="panel panel-info">
+          <div class="panel-body wrap">{{fileData}}</div>
+    </div>
   </div>
 </template>
