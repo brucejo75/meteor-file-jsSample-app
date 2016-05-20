@@ -13,6 +13,8 @@ Meteor.startup(function serverStartup() {
     return retVal;
   });
 
+  fileData.remove({});
+
   Meteor.publish('fileData', function pubFileData() {
     return fileData.find({});
   });
