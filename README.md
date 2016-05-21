@@ -14,6 +14,10 @@ Many thanks to [vsivsi](https://github.com/vsivsi)!
 
 Enjoy!
 
+### <a name="update-5-20-16"><a>5-20-2016 Update
+* Limited panel output to 5K
+* Clear panel on restart
+
 ### <a name="update-5-19-16"><a>5-19-2016 Update
 * Added support for dumping the data to an output panel.  This shows how to read the data back from the file collection.
 * A little bit of refactoring and added a couple of comments
