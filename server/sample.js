@@ -13,15 +13,15 @@ Meteor.startup(function serverStartup() {
     return retVal;
   });
 
-  fileData.remove({});
+  FileData.remove({});
 
   Meteor.publish('fileData', function pubFileData() {
-    return fileData.find({});
+    return FileData.find({});
   });
 
   let query = Uploads.find({'metadata._Resumable': {'$exists': false}});
   query.observe({
-    removed: function cleanUpIncompleteFiles(rmFile) {
+    'removed': function cleanUpIncompleteFiles(rmFile) {
       Uploads.remove({
         'metadata._Resumable.resumableIdentifier': rmFile._id._str
       });

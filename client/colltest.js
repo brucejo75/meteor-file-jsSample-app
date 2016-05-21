@@ -82,7 +82,7 @@ Template.collTest.helpers({
     return cursor;
   },
   'fileData': function dataEntries() {
-    let doc = fileData.findOne({});
+    let doc = FileData.findOne({});
     let data = doc && doc.data;
     return data;
   },
