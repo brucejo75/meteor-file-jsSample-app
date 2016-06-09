@@ -13,6 +13,11 @@ I also figured that I would share the code so others in my predicament could tak
 Many thanks to [vsivsi](https://github.com/vsivsi)!
 
 Enjoy!
+## Build Instructions
+```
+npm install
+meteor
+```
 
 ### <a name="update-5-20-16"><a>5-20-2016 Update
 * Limited panel output to 5K
