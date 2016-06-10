@@ -15,9 +15,13 @@ Many thanks to [vsivsi](https://github.com/vsivsi)!
 Enjoy!
 ## Build Instructions
 ```
-npm install
+meteor npm install
 meteor
 ```
+
+### <a name="update-6010-16"><a>6-10-2016 Update
+* Extended file-collection with `findOneFile`.  This will return the file data sychronously.
+* Added fix for [flow router issue](https://github.com/brucejo75/meteor-file-jsSample-app/issues/2).
 
 ### <a name="update-5-20-16"><a>5-20-2016 Update
 * Limited panel output to 5K
