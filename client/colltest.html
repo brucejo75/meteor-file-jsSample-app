@@ -40,7 +40,9 @@
           <button type="button" aria-hidden="true" class="btn btn-danger btn-itsy del-file"><span class="glyphicon glyphicon-remove"></span></button>
           {{#if length}}
             <button type="button" aria-hidden="true" class="btn btn-success btn-itsy dump-file">D</button>
-            <a href="{{link}}?download=true">{{shortFilename 56}}</a>
+            <!-- make sure you set target="_self" this will keep flowrouter
+            from throwing a 404 page error -->
+            <a href="{{link}}?download=true" target="_self">{{shortFilename 56}}</a>
           {{else}}
             {{shortFilename 56}}
           {{/if}}
